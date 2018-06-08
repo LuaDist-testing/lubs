@@ -1,17 +1,17 @@
 -- This file was automatically generated for the LuaDist project.
 
 package = 'lubs'
-version = '1.0.3-2'
+version = '1.0.4-1'
 
 -- LuaDist source
 source = {
-  tag = "1.0.3-2",
+  tag = "1.0.4-1",
   url = "git://github.com/LuaDist-testing/lubs.git"
 }
 -- Original source
 -- source = {
 -- 	url = 'git://github.com/luveti/lubs',
--- 	tag = '1.0.3'
+-- 	tag = '1.0.4'
 -- }
 
 description = {

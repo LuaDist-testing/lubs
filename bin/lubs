@@ -1,18 +1,8 @@
 #!/usr/bin/env lua
 
 local path = require('path')
-local uv = require('luv')
+local lubs = require('lubs')
 local task = require('lubs.task')
-local watch = require('lubs.watch')
-local timers = require('lubs.utils').timers
-
--- watch for CTRL-C
-local sigint = uv.new_signal()
-
-uv.signal_start(sigint, "sigint", function(signal)
-	print("Shutting down")
-	os.exit(1)
-end)
 
 if path.exists('./lubsfile') ~= nil then
 	require('./lubsfile')
@@ -20,27 +10,8 @@ else
 	error('lubfile.lua could not be found')
 end
 
--- execute the default task if no other tasks we're passed in
 if arg[1] == nil and task.exists('default') then
 	arg[1] = 'default'
 end
 
--- execute all the task's that we're passed in as arguments
-for i, name in ipairs(arg) do
-
-	local t = task.get(name)
-
-	-- exec its dependencies first, then exec the task
-	if t ~= nil then
-		task.exec(name)
-	else
-		error('no task named ' .. name .. ' has been registered')
-	end
-end
-
-if watch.count() > 0 then
-	local i = timers.set_interval(watch.interval, function(timer)
-		watch.tick()
-	end)
-	uv.run()
-end
+lubs.init(arg)
