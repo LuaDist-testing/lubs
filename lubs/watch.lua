@@ -40,7 +40,7 @@ return {
 
 				end
 
-			end, options)
+			end, w.options)
 
 		end
 
