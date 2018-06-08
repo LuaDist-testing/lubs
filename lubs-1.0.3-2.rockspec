@@ -1,13 +1,22 @@
-package = 'lubs'
-version = '1.0.3-1'
+-- This file was automatically generated for the LuaDist project.
 
+package = 'lubs'
+version = '1.0.3-2'
+
+-- LuaDist source
 source = {
-	url = 'git://github.com/luveti/lubs',
-	tag = '1.0.3'
+  tag = "1.0.3-2",
+  url = "git://github.com/LuaDist-testing/lubs.git"
 }
+-- Original source
+-- source = {
+-- 	url = 'git://github.com/luveti/lubs',
+-- 	tag = '1.0.3'
+-- }
 
 description = {
 	summary = 'Lua Build System (similar to gulp)',
+	homepage = 'https://github.com/luveti/lubs',
 	license = 'MIT'
 }
 
